@@ -16,14 +16,16 @@ const config: BetterConnectionOptions = {
   migrationsRun: true,
   logging: true,
   logger: 'file',
-  entities: [__dirname + '/entities/*{.ts,.js}'],
-  migrations: [__dirname + '/migrations/*{.ts,.js}'],
+  entities: [__dirname + '/entities/**/*{.ts,.js}'],
+  migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
   seeds: ['src/database/seeds/**/*.seed.ts'],
   factories: ['src/database/factories/**/*.factory.ts'],
    cli: {
-      entitiesDir: __dirname + '/entities',
-      migrationsDir: __dirname + '/migrations',
+      entitiesDir: 'dist/entities',
+      migrationsDir: 'dist/migrations',
   },
 };
+
+console.log(config);
 
 export = config;
