@@ -19,8 +19,8 @@ const config: BetterConnectionOptions = {
   logger: 'file',
   entities: [__dirname + '/entities/**/*{.ts,.js}'],
   migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
-  seeds: ['src/database/seeds/**/*.seed.ts'],
-  factories: ['src/database/factories/**/*.factory.ts'],
+  seeds: ['dist/seeds/**/*.seed.ts'],
+  factories: ['dist/factories/**/*.factory.ts'],
    cli: {
       entitiesDir: 'dist/entities',
       migrationsDir: 'dist/migrations',
