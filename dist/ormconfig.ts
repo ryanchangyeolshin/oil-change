@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
 interface BetterConnectionOptions extends PostgresConnectionOptions {
@@ -6,12 +7,12 @@ interface BetterConnectionOptions extends PostgresConnectionOptions {
 }
 
 const config: BetterConnectionOptions = {
-  type: 'postgres',
-  host: '127.0.0.1',
-  port: 5432,
-  username: 'ryanchangyeolshin',
-  password: 'ryanchangyeolshin',
-  database: 'oil_change_dev',
+  type: process.env.TYPEORM_DATABASE_TYPE as any,
+  host: process.env.TYPEORM_DATABASE_HOST,
+  port: parseInt(process.env.TYPEORM_DATABASE_PORT),
+  username: process.env.TYPEORM_DATABASE_USERNAME,
+  password: process.env.TYPEORM_DATABASE_PASSWORD,
+  database: 'oil_change_test',
   synchronize: true,
   migrationsRun: true,
   logging: true,
