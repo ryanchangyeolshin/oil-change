@@ -9,6 +9,5 @@ node_modules/
 build/
 tmp/
 temp/
-ormconfig.json
 ormlogs.log
 npm-debug.log
