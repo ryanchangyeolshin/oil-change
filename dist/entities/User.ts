@@ -37,6 +37,9 @@ export class User {
   public occupation: string;
 
   @Column({ type: "varchar", nullable: false })
+  public vehicleVIN: string;
+
+  @Column({ type: "varchar", nullable: false })
   public vehicleType: string;
 
   @Column({ type: "varchar", nullable: false })
