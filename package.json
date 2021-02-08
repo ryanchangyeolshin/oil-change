@@ -9,7 +9,7 @@
     "db:setup": "yarn db:create:dev && yarn db:create:test",
     "db:create:dev": "createdb --owner=ryanchangyeolshin oil_change_dev",
     "db:create:test": "createdb --owner=ryanchangyeolshin oil_change_test",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config dist/ormconfig.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ormconfig.js",
     "typeorm:g:entity": "npm run typeorm entity:create -n",
     "typeorm:migrate:generate": "npm run typeorm migration:generate -- -n",
     "typeorm:migrate:run": "npm run typeorm migration:run",
@@ -17,7 +17,7 @@
     "typeorm:revert": "npm run typeorm migration:revert",
     "typeorm:schema:drop": "npm run typeorm schema:drop",
     "typeorm:schema:sync": "npm run typeorm schema:sync",
-    "typeorm-seeding:config": "ts-node -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js --configName dist/ormconfig.ts",
+    "typeorm-seeding:config": "ts-node -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js --configName ormconfig.js",
     "typeorm-seeding:run": "npm run typeorm-seeding:config seed"
   },
   "dependencies": {
@@ -30,7 +30,6 @@
     "reflect-metadata": "^0.1.13",
     "swr": "^0.4.1",
     "typeorm": "^0.2.30",
-    "typeorm-seeding": "^1.6.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -47,9 +46,11 @@
     "@types/react": "^17.0.1",
     "@types/styled-components": "^5.1.7",
     "@types/styled-jsx": "^2.2.8",
+    "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-styled-components": "^1.12.0",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
+    "typeorm-seeding": "^1.6.1",
     "typescript": "^4.1.3"
   }
 }
