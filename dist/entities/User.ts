@@ -31,7 +31,7 @@ export class User {
   public phoneNumber!: string | null;
 
   @Column({ type: "date", nullable: true })
-  public birthDate!: string | null;
+  public birthDate!: Date | null;
 
   @Column({ type: "varchar", default: "unemployed" })
   public occupation: string;
@@ -43,7 +43,7 @@ export class User {
   public vehicleModel: string;
 
   @Column({ type: "varchar", nullable: false })
-  public vehicleYear;
+  public vehicleYear: string;
 
   @CreateDateColumn()
   public createdAt!: Date;
