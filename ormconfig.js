@@ -1,13 +1,7 @@
 require('dotenv').config();
-import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
-interface BetterConnectionOptions extends PostgresConnectionOptions {
-  readonly seeds?: (Function | string)[];
-  readonly factories?: (Function | string)[];
-}
-
-const config: BetterConnectionOptions = {
-  type: process.env.TYPEORM_DATABASE_TYPE as any,
+const config = {
+  type: process.env.TYPEORM_DATABASE_TYPE,
   host: process.env.TYPEORM_DATABASE_HOST,
   port: parseInt(process.env.TYPEORM_DATABASE_PORT),
   username: process.env.TYPEORM_DATABASE_USERNAME,
@@ -27,4 +21,4 @@ const config: BetterConnectionOptions = {
   },
 };
 
-export = config;
+module.exports = config;
