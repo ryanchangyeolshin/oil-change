@@ -27,6 +27,4 @@ const config: BetterConnectionOptions = {
   },
 };
 
-console.log(config);
-
 export = config;
