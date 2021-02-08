@@ -8,14 +8,15 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "target": "es2020",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2020"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -35,6 +36,7 @@
     "next-env.d.ts",
     "*.ts",
     "**/*.ts",
+    "**/**/.ts",
     "**/*.tsx"
   ]
 }
