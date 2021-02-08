@@ -40,6 +40,9 @@ export class User {
   public vehicleType: string;
 
   @Column({ type: "varchar", nullable: false })
+  public vehicleMake: string;
+
+  @Column({ type: "varchar", nullable: false })
   public vehicleModel: string;
 
   @Column({ type: "varchar", nullable: false })
