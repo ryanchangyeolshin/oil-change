@@ -1,19 +1,25 @@
 import 'reflect-metadata';
-import { Connection, createConnection, getConnectionOptions } from 'typeorm';
+import { Connection, getConnection, createConnection, getConnectionOptions, ConnectionManager, getConnectionManager } from 'typeorm';
 import { User } from '../dist/entities/User';
 
-export const initializeDatabase = async (optionOverrides: Record<string, any> = {}): Promise<Connection> => {
+export const getOrCreateConnection = async (optionOverrides: Record<string, any> = {}): Promise<Connection> => {
+  const ConnectionManager: ConnectionManager = getConnectionManager();
   const connectionOptions = await getConnectionOptions();
   const options: any = {
     ...connectionOptions,
-    entities: [User],
-    migrations: [__dirname + '/migrations/*.ts'],
+    name: "default",
+    entities: [User], 
+    migrations: [__dirname + '/dist/migrations/*.ts'],
     ...optionOverrides
   };
 
-  const connection = await createConnection(options);
-
-  return connection;
+  try {
+    const connection: Connection = getConnection(options);
+    return connection;
+  } catch (e) {
+    const connection: Connection = await createConnection(options);
+    return connection;
+  };  
 };
 
-export default initializeDatabase;
+export default getOrCreateConnection;
