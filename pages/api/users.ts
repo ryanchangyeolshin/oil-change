@@ -1,10 +1,10 @@
 import { NowRequest, NowResponse } from '@now/node';
 import { Connection, Repository, getRepository } from 'typeorm';
-import { initializeDatabase } from '../../initializers/database';
+import { getOrCreateConnection } from '../../initializers/database';
 import { User } from "../../dist/entities/User";
 
 export default async (req: NowRequest, res: NowResponse) => {
-  const connection: Connection = await initializeDatabase();
+  const connection: Connection = await getOrCreateConnection();
   const userRepo: Repository<User> = await getRepository(User);
   const offset: number = parseInt(req.query.offset.toString());
   const limit: number = parseInt(req.query.limit.toString());
