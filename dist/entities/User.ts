@@ -24,9 +24,6 @@ export class User {
   @Column({ type: "varchar" })
   public email!: string;
 
-  @Column({ type: "varchar", nullable: false })
-  public password!: string | null;
-
   @Column({ type: "varchar", nullable: true })
   public phoneNumber!: string | null;
 
