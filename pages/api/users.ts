@@ -11,7 +11,6 @@ interface UserPayload {
   birthDate?: Date,
   occupation?: string,
   email?: string,
-  password?: string,
   phoneNumber?: string,
   vehicleVIN?: string,
   vehicleType?: string,
