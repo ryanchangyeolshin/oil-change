@@ -36,7 +36,6 @@ export default async (req: NowRequest, res: NowResponse) => {
         await connection.close();
         return res.status(400).send(e);
       }
-      break;
     case 'POST':
       const newUserId: string = v4();
       const newUserPayload: UserPayload = { id: newUserId, ...req.body };
@@ -48,7 +47,8 @@ export default async (req: NowRequest, res: NowResponse) => {
       } catch (e) {
         await connection.close();
         return res.status(400).send(e);
-      }
+      }  
     default:
+      break;
   }
 };
